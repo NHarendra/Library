@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-12 text-right">
+  <!-- <button type="button" class="btn logout-btn" routerLink="/login" routerLinkActive="active">Logout</button> -->
+  <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+  </div>
+</div>
+</div>
+<!-- <div class="container">
+  <div class="row"> -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-style" data-toggle="modal" data-target="#issueBookModal" disabled>
+    Issue Book
+</button> -->
+
+<div class="container">
+  <table class="table table-light">
+      <tbody>
+          <tr>
+            <td scope="col"><button type="button" class="btn" routerLink="/book-details" routerLinkActive="active">Books List</button></td>  
+            <td scope="col"><button type="button" class="btn" [routerLink]="['/user-history/', id]" routerLinkActive="active">Books Issued</button></td>
+              
+          </tr>
+          <tr>
+              <td scope="col"><button type="button" class="btn" [routerLink]="['/user-reserve-history/',id]" routerLinkActive="active">Books Reserved</button></td>
+              <td scope="col"><button type="button" class="btn" [routerLink]="['/user-payment-history/',id]" routerLinkActive="active">Payment History</button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="issueBookModal" tabindex="-1" role="dialog" aria-labelledby="issueBookModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="issueBookModalTitle">Issue Book</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-group" (ngSubmit)="onIssueClick()">
+            <div class="row" id="search-book">
+                <input #searchBook type="text" name="bookname" class="form-control" placeholder="Search Book" (input)="findBook(searchBook.value)" />
+              <ul class="searchBook-result">
+                <li *ngFor="let book of books$ | async" >
+                  <a routerLink="/book-details/{{book.bookId}}">
+                    {{book.bookName}}
+                  </a>
+                </li>
+              </ul>
+             </div>
+            <div class="row">
+              <button class="btn btn-primary" [(ngModel)]="abc">
+                Check Availability
+              </button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Issue</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- </div>
+</div> -->

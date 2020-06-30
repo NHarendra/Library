@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-left">
+            <button type="button" class="btn logout-btn" routerLink="/user-home" routerLinkActive="active">Back</button>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+    </div>
+<div class="container-fluid">
+    <table class="table table-light table-bordered">
+        <thead class="thead-primary">
+            <tr>
+                <th scope="col">User Name</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let lReserve of userReserveList">
+            <tr>
+                <td>{{lReserve.user.userName}}</td>
+                <td>{{lReserve.book.bookName}}</td>
+                <td>{{lReserve.startDate | date:'medium'}}</td>
+                <td>{{lReserve.endDate | date:'medium'}}</td>
+                <div *ngIf="!lReserve.isActive; else elseBlock">
+                    <td>Inactive</td>
+                </div>
+                <ng-template #elseBlock>
+                    <td style="color:brown">Active</td>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>

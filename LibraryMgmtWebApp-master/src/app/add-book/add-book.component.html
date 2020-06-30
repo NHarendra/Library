@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-left">
+            <button type="button" class="btn logout-btn" routerLink="/admin-home"
+                routerLinkActive="active">Back</button>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+    </div>
+    <div class="container">
+        <form (ngSubmit)="onAddBook()">
+            <div class="form-group">
+                <label for="bookname" class="font-custom">Book Name:</label>
+                <input type="text" class="form-control" name="bookname" placeholder="Book Name" id="bookname"
+                    [(ngModel)]="book.bookName">
+            </div>
+            <div class="form-group">
+                <label for="author" class="font-custom">Author:</label>
+                <input type="text" class="form-control" name="author" placeholder="Author" id="author"
+                    [(ngModel)]="book.author">
+            </div>
+            <div class="form-group">
+                <label for="rent" class="font-custom">Rent (in Rs.):</label>
+                <input type="text" class="form-control" name="rent" placeholder="Book Rent" id="rent"
+                    [(ngModel)]="book.rent">
+            </div>
+            <div class="form-group">
+                <label for="price" class="font-custom">Price of Book (in Rs.):</label>
+                <input type="text" class="form-control" name="price" placeholder="Book Price" id="price"
+                    [(ngModel)]="book.price">
+            </div>
+            <div class="form-group">
+                <label for="qty" class="font-custom">Book Qty:</label>
+                <input type="text" class="form-control" name="quantity" placeholder="Book Quantity" id="qty"
+                    [(ngModel)]="book.quantity">
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-6 text-left">
+                        <button type="submit" class="btn">Add Book</button>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button type="button" class="btn" (click)="onClear()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="bookAddModal" tabindex="-1" role="dialog" aria-labelledby="bookAddModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookAddModalTitle">{{modalMsgHeader}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{modalMsgBody}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal" routerLink="/admin-home"
+                        routerLinkActive="active">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>

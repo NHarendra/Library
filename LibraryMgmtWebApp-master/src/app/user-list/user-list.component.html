@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-left">
+            <button type="button" class="btn logout-btn" routerLink="/admin-home" routerLinkActive="active">Back</button>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <table class="table table-light table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">UserId</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone No</th>
+                <th scope="col">User Type</th>
+                <th scope="col">Books Issued</th>
+                <th scope="col">Books Reserved</th>
+                <th scope="col">User Role</th>
+                <th scope="col">Created Date</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let luser of userList">
+            <tr><td>{{luser.userId}}</td>
+                <td>{{luser.userName}}</td>
+                <td>{{luser.address}}</td>
+                <td>{{luser.phoneNo}}</td>
+                <td>{{luser.typeOfUser}}</td>
+                <td>{{luser.activeBooksIssued}}</td>
+                <td>{{luser.booksReserved}}</td>
+                <td>{{luser.userRole}}</td>
+                <td>{{luser.createdDt | date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+.btn {
+	transition: all .5s ease;
+	width: 100%;
+	border-radius: 30px;
+	color:#802938;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #802938;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+.table-btn {
+	transition: all .5s ease;
+	width: 100%;
+	border-radius: 30px;
+	color:#802938;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #802938;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.logout-btn {
+	border: transparent !important;
+    width: 10%!important;
+	top: 10px;
+    right:10px;
+}
+
+.btn:hover:enabled {
+	background-color: #802938;
+	color:#fff;
+}
+
+.btn:disabled {
+	cursor: not-allowed;
+}
+
+body {
+	/* background: url('/assets/images/library-bg2.jpg') no-repeat center center fixed; */
+	background-image: url('/assets/images/library-bg2.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+	-o-background-size: cover;
+	opacity: 0.85;
+}
+
+.font-custom {
+    color:#fff !important;
+    font-weight: bold !important;
+}

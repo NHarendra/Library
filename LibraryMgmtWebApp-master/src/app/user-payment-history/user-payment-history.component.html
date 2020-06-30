@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-left">
+            <button type="button" class="btn logout-btn" routerLink="/user-home" routerLinkActive="active">Back</button>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+    </div>
+<div class="container-fluid">
+    <table class="table table-light table-bordered">
+        <thead class="thead-primary">
+            <tr>
+                <th scope="col">User Name</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Amount Paid</th>
+                <th scope="col">Payment Date</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let lpay of userPayList">
+            <tr>
+                <td>{{lpay.user.userName}}</td>
+                <td>{{lpay.book.bookName}}</td>
+                <td>{{lpay.totalRent}}</td>
+                <td>{{lpay.paymentDate | date:'medium'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

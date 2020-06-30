@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <!-- <div class="row text-center"> -->
+        <div class="col-md-6 col-xs-12 col-sm-12 signup-form main-content">
+            <div class="row">
+                <form class="form-group" (ngSubmit)="onSignUp()">
+                    <div class="d-flex justify-content-center h2_signup">
+                        <h2>Sign Up</h2>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="username" id="userSignUp" class="form__input" placeholder="Username" [(ngModel)]="userSignupObj.userName" required>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="address" id="address" class="form__input" placeholder="Address" [(ngModel)]="userSignupObj.address" required>
+                    </div>
+                    <div class="row">
+                        <input type="text" name="phNo" id="phNo" class="form__input" placeholder="Contact No." [(ngModel)]="userSignupObj.phoneNo" required>
+                    </div>
+                    <div class="row">
+                        <input type="password" name="password" id="userPassword" class="form__input is-invalid" placeholder="Password" [(ngModel)]="userSignupObj.password" required>
+                        <small class="form-text text-muted" style="padding-left: 10px;">Must be 8-20 characters long</small>
+                    </div>
+                    <!-- <div class="row">
+                        <input type="password" name="password" id="cnfmPassword" class="form__input" placeholder="Confirm Password">
+                    </div> -->
+                    <div class="row">
+                        <!-- <input type="text" class="form__input dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="userType" id="userType" placeholder="Select Subscription Plan">
+                        <div class="dropdown-menu">
+                            <a type="button" class="">Platinum</a>
+                            <a type="button" class="form__input">Gold</a>
+                            <a type="button" class="form__input">Silver</a>
+                        </div> -->
+                        <!-- <label class="form__input" for="planSelect">Select Subscription Plan</label> -->
+                        <select class="form__input" id="planSelect" (change)="selectChangeHandler($event)" required>
+                          <option value="" selected disabled>Select Subscription Plan</option> 
+                          <option value="Platinum">Platinum</option>
+                          <option value="Gold">Gold</option>
+                          <option value="Silver">Silver</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Submit" class="btn">
+                        <label>{{msg}}</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+
+<div class="modal fade" id="userAddModal" tabindex="-1" role="dialog" aria-labelledby="userAddModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userAddModalTitle">{{modalMsgHeader}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{modalMsgBody}}</p>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Ok" class="btn" data-dismiss="modal" routerLink="/login" routerLinkActive="active" />
+            </div>
+      </div>
+    </div>
+</div>

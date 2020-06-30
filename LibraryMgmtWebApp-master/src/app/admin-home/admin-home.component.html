@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12 text-right">
+    <!-- <button type="button" class="btn logout-btn" routerLink="/login" routerLinkActive="active">Logout</button> -->
+    <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+    </div>
+</div>
+</div>
+<div class="container">
+    <table class="table table-light">
+        
+        <tbody>
+            <tr>
+                <td scope="col"><button type="button" class="btn" routerLink="/add-book" routerLinkActive="active">Add Book</button></td>
+                <td scope="col"><button type="button" class="btn" routerLink="/add-user" routerLinkActive="active">Add User</button></td>
+            </tr>
+            <tr>
+                <td scope="col"><button type="button" class="btn" routerLink="/book-issue-admin" routerLinkActive="active">Issue Book to User</button></td>
+                <td scope="col"><button type="button" class="btn" routerLink="/book-return" routerLinkActive="active">Book Return</button></td>
+            </tr>
+            <tr>
+                <td scope="col"><button type="button" class="btn" routerLink="/issue-list" routerLinkActive="active">Book Issue Details</button></td>
+                <td scope="col"><button type="button" class="btn" routerLink="/payment-list" routerLinkActive="active">Payment Details</button></td>
+            </tr>
+            <tr>
+                <td scope="col"><button type="button" class="btn" routerLink="/book-list" routerLinkActive="active">Books List</button></td>
+                <td scope="col"><button type="button" class="btn" routerLink="/user-list" routerLinkActive="active">User List</button></td>
+            </tr>
+            <tr>
+                <td scope="col"><button type="button" class="btn" (click)="onRelease()">Release Reserved Books</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="releaseModal" tabindex="-1" role="dialog" aria-labelledby="releaseModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="releaseModalTitle">{{modalHeader}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{modalBody}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal" routerLink="/admin-home" routerLinkActive="active">OK</button>
+            </div>
+      </div>
+    </div>
+</div>  

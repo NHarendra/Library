@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-left">
+            <button type="button" class="btn logout-btn" routerLink="/admin-home" routerLinkActive="active">Back</button>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <table class="table table-light table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Book Id</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Rent</th>
+                <th scope="col">Price</th>
+                <th scope="col">Available</th>
+                <th scope="col">Created Date</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let lbook of bookList">
+            <tr>
+                <td>{{lbook.bookId}}</td>
+                <td>{{lbook.bookName}}</td>
+                <td>{{lbook.author}}</td>
+                <td>{{lbook.rent}}</td>
+                <td>{{lbook.price}}</td>
+                <td>{{lbook.quantity}}</td>
+                <td>{{lbook.createdDt | date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

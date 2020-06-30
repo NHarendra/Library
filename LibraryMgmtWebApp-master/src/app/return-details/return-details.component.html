@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12 text-right">
+    <!-- <button type="button" class="btn logout-btn" routerLink="/login" routerLinkActive="active">Logout</button> -->
+    <button type="button" class="btn logout-btn" (click)="onLogout()">Logout</button>
+    </div>
+</div>
+</div>
+<div class="container">
+    <table class="table table-light">
+        <thead>
+            <h2>Details</h2>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="col">User Name</td>
+                <td scope="col">{{users.userName}}</td>
+            </tr>
+            <tr>
+                <td scope="col">Book Name</td>
+                <td scope="col">{{books.bookName}}</td>
+            </tr>
+            <tr>
+                <td scope="col">Computed Return Date</td>
+                <td scope="col">{{issueBook.dateOfReturn | date}}</td>
+            </tr>
+            <tr>
+                <td scope="col">Actual Return Date</td>
+                <td scope="col">{{today | date}}</td>
+            </tr>
+            <tr>
+                <td scope="col">Rent of Book</td>
+                <td scope="col">{{issueBook.totalRent}}</td>
+            </tr>
+            <tr>
+                <td scope="col">Fine</td>
+                <td scope="col">{{fine}}</td>
+            </tr>
+            <tr>
+                <td scope="col"><strong>Total Amount</strong></td>
+                <td scope="col"><strong>{{amount}}</strong></td>
+            </tr>
+            <tr>
+                <td scope="col"><button type="button" class="btn btn-primary" routerLink="/admin-home" routerLinkActive="active">Cancel</button></td>
+                <td scope="col"><button type="button" class="btn btn-primary" (click)="onPay()">Received Rs. {{amount}}</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalTitle">{{modalHeader}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{modalBody}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/admin-home" routerLinkActive="active">Ok</button>
+            </div>
+      </div>
+    </div>
+</div>
