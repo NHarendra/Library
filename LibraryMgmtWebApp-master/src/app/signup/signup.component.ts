@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   signUpRes: number;
   modalMsgBody: string;
   modalMsgHeader: string;
+  msg:any;
   constructor(
     private _libService: LibraryService,
     private router: Router

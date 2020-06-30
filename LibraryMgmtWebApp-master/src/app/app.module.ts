@@ -55,7 +55,7 @@ import { UserPaymentHistoryComponent } from './user-payment-history/user-payment
     UserPaymentHistoryComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

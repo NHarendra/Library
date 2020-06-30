@@ -11,5 +11,8 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
+  onLogout(){
+    alert("logout");
+  }
 
 }
